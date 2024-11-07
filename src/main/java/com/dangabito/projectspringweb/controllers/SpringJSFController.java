@@ -19,9 +19,13 @@ public class SpringJSFController {
 	private static final long serialVersionUID = 1L;
 
 	private String nombreEmpresa;
+	
+	private String nombreEmpleado;
 
 	// ::::::::::::::::::::CREANDO OBJETO SIN SPRING::::::::::::::::::::::::::::::::
 	// SpringService springService= new SpringServicesImpl();
+
+
 
 	@Autowired
 	private SpringService springServiceImpl;
@@ -35,6 +39,8 @@ public class SpringJSFController {
 		String nombre = springServiceImpl.mostrarNombreEmpresa();
 		System.out.println(nombre);
 		this.nombreEmpresa = nombre;
+		String nombreEmpleadoString= springServiceImpl.mostrarNombreEmpleado();
+		this.nombreEmpleado=nombreEmpleadoString;
 	}
 
 	/**
@@ -63,6 +69,20 @@ public class SpringJSFController {
 	 */
 	public void setNombreEmpresa(String nombreEmpresa) {
 		this.nombreEmpresa = nombreEmpresa;
+	}
+	
+	/**
+	 * @return the nombreEmpleado
+	 */
+	public String getNombreEmpleado() {
+		return nombreEmpleado;
+	}
+
+	/**
+	 * @param nombreEmpleado the nombreEmpleado to set
+	 */
+	public void setNombreEmpleadoString(String nombreEmpleado) {
+		this.nombreEmpleado = nombreEmpleado;
 	}
 
 }
